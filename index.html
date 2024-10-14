@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+    <!-- Replace the content tag with appropriate information -->
+    <meta name="description" content="DESCRIPTION META TAG">
+    <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+    <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+    <meta property="og:url" content="URL OF THE WEBSITE" />
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+    <meta property="og:image" content="static/image/your_banner_image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+
+    <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+    <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+    <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+    <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Keywords for your paper to be indexed by-->
+    <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>UniCon: A Simple Approach to Unifying Diffusion-based Conditional Generation</title>
+    <link rel="icon" type="image/x-icon" href="static/images/github.png">
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+</head>
+
+<body>
+
+
+    <section class="hero">
+        <div class="hero-body" style="padding-bottom: 0.5rem;">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">UniCon: A Simple Approach to Unifying Diffusion-based
+                            Conditional Generation</h1>
+                        <!-- <div class="is-size-5 publication-authors">
+                            <span class="author-block">CVPR 2024</span>
+                        </div> -->
+                        <div class="is-size-5 publication-authors">
+                            <!-- Paper authors -->
+                            <span class="author-block">
+                                <a href="https://github.com/lixirui142" target="_blank">Xirui Li</a><sup>1</sup>,</span>
+                            <span class="author-block">
+                                <a href="https://scholar.google.com/citations?user=LQvi5XAAAAAJ&hl=en&oi=ao"
+                                    target="_blank">Charles Herrmann</a><sup>2</sup>
+                            </span>
+                            <span class="author-block">
+                                <a href="https://ckkelvinchan.github.io/" target="_blank">Kelvin C.K.
+                                    Chan</a><sup>2</sup>
+                            </span>
+                            <span class="author-block">
+                                <a href="https://research.google/people/yinxiaoli/?&type=google" target="_blank">Yinxiao
+                                    Li</a><sup>2</sup>
+                            </span>
+                            <span class="author-block">
+                                <a href="https://deqings.github.io/" target="_blank">Deqing Sun</a><sup>2</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://vision.sjtu.edu.cn/" target="_blank">Chao Ma</a><sup>1</sup>,</span>
+                            <span class="author-block">
+                                <a href="https://faculty.ucmerced.edu/mhyang/" target="_blank">Ming-Hsuan
+                                    Yang</a><sup>2</sup>
+                            </span>
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup><a href="https://www.sjtu.edu.cn/"
+                                    target="_blank">Shanghai Jiao Tong University</a>,</span>
+                            <span class="author-block"><sup>2</sup><a href="https://research.google/"
+                                    target="_blank">Google</a></span>
+                        </div>
+
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <!-- Arxiv PDF link -->
+                                <span class="link-block">
+                                    <a target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+
+                                <!-- Supplementary PDF link -->
+                                <!-- <span class="link-block">
+                      <a href="sm/supp.html" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                                <!-- Github link -->
+                                <span class="link-block">
+                                    <a target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+                                <!-- Hugging Face Demo link with an image icon -->
+                                <!-- <span class="link-block">
+                <a href="https://huggingface.co/spaces/weizmannscience/tokenflow" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <img src="static/images/hf.png" alt="Hugging Face Demo">
+                  </span>
+                  <span>Demo</span>
+                </a>
+              </span> -->
+                                <!-- ArXiv abstract Link -->
+                                <span class="link-block">
+                                    <a target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                                <!-- Youtube summary video Link -->
+                                <!-- <span class="link-block">
+                                    <a href="https://youtu.be/cZPtwcRepNY" target="_blank"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-youtube"></i>
+                                        </span>
+                                        <span>Video</span>
+                                    </a>
+                                </span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Teaser video-->
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <div class="column has-text-centered">
+                    TL;DR: The proposed UniCon enables diverse generation behavior in one model for a targeted
+                    type of image pair.
+                </div>
+                <div>
+                    <td colspan="3"><img src="images/teaser.png" alt="" width="1000" /></td>
+                </div>
+                <!-- <h2 class="subtitle has-text-centered"> 
+      </h2> -->
+            </div>
+        </div>
+    </section>
+    <!-- End teaser video -->
+
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Hightlights</h2>
+                    <div class="content has-text-justified">
+                        <!-- <p>
+                                Recent progress in image generation has sparked research into controlling these models
+                                through condition signals, with various methods addressing specific challenges in
+                                conditional generation. Instead of proposing another specialized technique, we introduce a
+                                simple, unified framework to handle diverse conditional generation tasks involving a
+                                specific image-condition correlation. By learning a joint distribution over a correlated
+                                image pair (e.g. image and depth) with a diffusion model, our approach enables versatile
+                                capabilities via different inference-time sampling schemes, including controllable image
+                                generation (e.g. depth to image), estimation (e.g. image to depth), signal guidance, joint
+                                generation (image & depth), and coarse control. Previous attempts at unification often
+                                introduce significant complexity through multi-stage training, architectural modification,
+                                or increased parameter counts. In contrast, our simple formulation requires a single,
+                                computationally efficient training stage, maintains the standard model input, and adds
+                                minimal learned parameters (15% of the base model). Moreover, our model supports additional
+                                capabilities like non-spatially aligned and coarse conditioning. Extensive results show that
+                                our single model can produce comparable results with specialized methods and better results
+                                than prior unified methods.
+                                We also demonstrate that multiple models can be effectively combined for multi-signal
+                                conditional generation.
+                            </p> -->
+                        <ul>
+                            <li>UniCon adapts a pretrained image diffusion model for a
+                                specific image-condition pair, with minimal additional parameters (about 15%).</li>
+                            <li>UniCon enables versatile generation behaviors in one model via flexible inference-time
+                                sampling schedules.</li>
+                            <li>UniCon can be trained for both densely aligned or loosely correlated conditions.</li>
+                            <li>Multiple UniCon models can be combined for multi-signal conditional generation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End paper abstract -->
+
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-">
+                        <h2 class="title is-3" style="margin-bottom: 0.8rem">One model for different tasks</h2>
+                        <div class="content has-text-justified">
+                            <div style="text-align: center;">
+                                One UniCon model supports diverse generation behavior at inference time.<br>
+                                All following results are from the same UniCon-Depth model.
+                            </div>
+                        </div>
+                        <div class="content has-text-justified">
+                            <div>
+                                <td colspan="3"><img src="images/unicon-depth.png" alt="" width="1000" /></td>
+                            </div>
+
+                        </div>
+                    </div>
+    </section>
+
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-">
+                        <h2 class="title is-3" style="margin-bottom: 0.8rem">Conditional generation with different
+                            UniCon models</h2>
+                        <div class="content has-text-justified">
+                            <div style="text-align: center;">
+                                UniCon models can be trained for various conditions, including densely aligned ones
+                                (depth,
+                                edge, pose) and loosely correlated ones (identity, and appearance).<br>
+                            </div>
+                        </div>
+                        <div class="content has-text-justified">
+                            <div class="toggle-buttons">
+                                <button class="toggle-button button-active"
+                                    onclick="showDiv('depth', this)">Depth</button>
+                                <button class="toggle-button" onclick="showDiv('edge', this)">SoftEdge</button>
+                                <button class="toggle-button" onclick="showDiv('pose', this)">Human pose</button>
+                                <button class="toggle-button" onclick="showDiv('identity', this)">Human
+                                    identity</button>
+                                <button class="toggle-button" onclick="showDiv('appearance', this)">Image
+                                    appearance</button>
+                            </div>
+                            <div id="depth" class="toggle-div" style="display:block">
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/depth-input0.png" alt="" />
+                                    <div class="caption">Input</div>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/depth-output0.png" alt="" style="margin-right: 40px;" />
+                                    <div class="caption" style="margin-right: 40px;">Output</div>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/depth-input1.png" alt="" />
+                                    <div class="caption">Input</div>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/depth-output1.png" alt="" />
+                                    <div class="caption">Output</div>
+                                </div>
+                            </div>
+                            <div id="edge" class="toggle-div">
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/edge-input0.png" alt="" />
+                                    <div class="caption">Input</div>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/edge-output0.png" alt="" style="margin-right: 40px;" />
+                                    <div class="caption" style="margin-right: 40px;">Output</div>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/edge-input1.png" alt="" />
+                                    <div class="caption">Input</div>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/edge-output1.png" alt="" />
+                                    <div class="caption">Output</div>
+                                </div>
+                            </div>
+                            <div id="pose" class="toggle-div">
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/pose-input0.png" alt="" />
+                                    <div class="caption">Input</div>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/pose-output0.png" alt="" style="margin-right: 40px;" />
+                                    <div class="caption" style="margin-right: 40px;">Output</div>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/pose-input1.png" alt="" />
+                                    <div class="caption">Input</div>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/pose-output1.png" alt="" />
+                                    <div class="caption">Output</div>
+                                </div>
+                            </div>
+                            <div id="identity" class="toggle-div">
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/id-input0.png" alt="" />
+                                    <div class="caption">Input</div>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/id-output0.png" alt="" style="margin-right: 40px;" />
+                                    <div class="caption" style="margin-right: 40px;">Output</div>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/id-input1.png" alt="" />
+                                    <div class="caption">Input</div>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/id-output1.png" alt="" />
+                                    <div class="caption">Output</div>
+                                </div>
+                            </div>
+                            <div id="appearance" class="toggle-div">
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/appearance-input0.png" alt="" />
+                                    <div class="caption">Input</div>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/appearance-output0.png" alt=""
+                                        style="margin-right: 40px;" />
+                                    <div class="caption" style="margin-right: 40px;">Output</div>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/appearance-input1.png" alt="" />
+                                    <div class="caption">Input</div>
+                                </div>
+                                <div class="image-wrapper">
+                                    <img src="images/cond-res/appearance-output1.png" alt="" />
+                                    <div class="caption">Output</div>
+                                </div>
+                            </div>
+
+                            <!-- <div>
+                                <td colspan="3"><img src="images/cond-res.png" alt="" width="1000" /></td>
+                            </div>
+                            <div class="content has-text-justified">
+                                <p>
+                                    
+                                </p>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </section>
+
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-">
+                        <h2 class="title is-3" style="margin-bottom: 0.8rem">Flexible conditional generation</h2>
+                        <div class="content has-text-justified">
+                            <div style="text-align: center;">
+                                UniCon models provide high flexibility in conditional generation, via flexible sampling
+                                schedules.<br>
+                            </div>
+                        </div>
+                        <div class="content has-text-justified">
+
+                            <div>
+                                <td colspan="3"><img src="images/flexible.png" alt="" width="1000" /></td>
+                            </div>
+                            <div class="content has-text-justified">
+                                <p>
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    </section>
+
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column custom-width">
+                        <h2 class="title is-3" style="margin-bottom: 0.8rem">Combining multiple UniCon models</h2>
+                        <div class="content has-text-justified">
+                            <div style="text-align: center;">
+                                Multiple UniCon models can be combined for multi-signal conditional generation.<br>
+                            </div>
+                        </div>
+                        <div id="results-carousel" class="carousel results-carousel" align="center">
+                            <div class="item item-video1">
+                                <!-- Add caption element for each video preload="auto"-->
+                                <div class="image-wrapper" style="width: 900px;">
+                                    <img src="images/multi-model/res0.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="item item-video1">
+                                <!-- Add caption element for each video preload="auto"-->
+                                <div class="image-wrapper" style="width: 900px;">
+                                    <img src="images/multi-model/res1.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="item item-video1">
+                                <!-- Add caption element for each video preload="auto"-->
+                                <div class="image-wrapper" style="width: 900px;">
+                                    <img src="images/multi-model/res2.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="item item-video1">
+                                <!-- Add caption element for each video preload="auto"-->
+                                <div class="image-wrapper" style="width: 900px;">
+                                    <img src="images/multi-model/res3.png" alt="" />
+                                </div>
+                            </div>
+                            <div class="item item-video1">
+                                <!-- Add caption element for each video preload="auto"-->
+                                <div class="image-wrapper" style="width: 900px;">
+                                    <img src="images/multi-model/res4.png" alt="" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+    <!-- Paper poster -->
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-">
+                        <h2 class="title is-3">Method</h2>
+                        <div class="content has-text-justified">
+
+
+
+                            <div>
+                                <td colspan="3"><img src="images/pipeline.png" alt="" width="1000" /></td>
+                            </div>
+                            <div class="content has-text-justified">
+                                <p>
+                                    UniCon is adapted from a pretrained image diffusion model with additional joint
+                                    cross-attention modules and LoRA adapters.
+                                </p>
+                                <p>
+                                    Given a pair of image-condition inputs, our UniCon model processes them
+                                    concurrently in two parallel branches.
+                                    Features from two branches attend to each other in the injected joint
+                                    cross-attention modules.
+                                    The LoRA adapters apply the condition branch and the joint cross-attention modules.
+                                </p>
+                                <p>
+                                    The model is trained on image-condition pairs.
+                                    During training, we separately sample
+                                    timesteps for each input and compute loss over both branches.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+    </section>
+
+
+    <!--End paper poster -->
+
+
+    <!--BibTex citation -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@article{li2023vidtome,
+    title={VidToMe: Video Token Merging for Zero-Shot Video Editing},
+    author={Li, Xirui and Ma, Chao and Yang, Xiaokang and Yang, Ming-Hsuan},
+    booktitle={arXiv prepsrint arxiv:2312.10656},
+    year={2023}
+    }</code></pre>
+        </div>
+    </section>
+    <!--End BibTex citation -->
+
+    <section class="hero is-small">
+        <div class="hero-body">
+            <footer class="footer">
+                <div class="container">
+                    <div class="columns is-centered">
+                        <div class="column is-8">
+                            <div class="content">
+
+                                <p>
+                                    This page was built with the
+                                    <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                                        target="_blank">Academic Project Page Template
+                                    </a>.
+                                    You are free to borrow the of this website, we just ask that you link back to this
+                                    page in the footer. <br> This website is licensed under a
+                                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"
+                                        target="_blank">Creative
+                                        Commons Attribution-ShareAlike 4.0 International License
+                                    </a>.
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- Statcounter tracking code -->
+
+            <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+            <!-- End of Statcounter Code -->
+            <script>
+                window.addEventListener('DOMContentLoaded', (event) => {
+                    const videoWrappers = document.querySelectorAll('.video-wrapper');
+
+                    videoWrappers.forEach(wrapper => {
+                        const defaultVideo = wrapper.querySelector('.default-video');
+                        const aspectRatio = defaultVideo.videoWidth / defaultVideo.videoHeight;
+                        const height = wrapper.offsetWidth / aspectRatio;
+
+                        wrapper.style.height = `${height}px`;
+
+                        wrapper.addEventListener('mouseenter', () => {
+                            defaultVideo.pause();
+                            hoverVideo.play();
+                        });
+
+                        wrapper.addEventListener('mouseleave', () => {
+                            defaultVideo.play();
+                            hoverVideo.pause();
+                        });
+                    });
+                });
+                $(document).ready(function () {
+                    var carouselItems = $('.carousel .item');
+                    var numItems = carouselItems.length;
+                    var numVideos = 5;
+                    var currentIndex = 0;
+
+                    $('.carousel').on('click', function () {
+                        currentIndex++;
+                        if (currentIndex + numVideos <= numItems) {
+                            carouselItems.removeClass('active');
+                            carouselItems.slice(currentIndex, currentIndex + numVideos).addClass('active');
+                        } else {
+                            currentIndex = 0;
+                            carouselItems.removeClass('active');
+                            carouselItems.slice(currentIndex, currentIndex + numVideos).addClass('active');
+                        }
+                    });
+
+                    carouselItems.slice(currentIndex, currentIndex + numVideos).addClass('active');
+                });
+            </script>
+</body>
+
+</html>
